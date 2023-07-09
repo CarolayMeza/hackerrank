@@ -20,21 +20,20 @@ import sys
 #
 # Lee la matriz de entrada que contiene cinco números enteros.
 def miniMaxSum(arr):
-    # Write your code here
-    
-    minSum = float('inf')
-    maxSum = float('-inf')
+    minSum = float('inf')  # Inicializar la suma mínima con un valor infinito
+    maxSum = float('-inf')  # Inicializar la suma máxima con un valor menos infinito
 
     for i in range(len(arr)):
-        totalSum = sum(arr) - arr[i]
-        minSum = min(minSum, totalSum)
-        maxSum = max(maxSum, totalSum)
+        totalSum = sum(arr) - arr[i]  # Calcular la suma total excluyendo el elemento actual
+        minSum = min(minSum, totalSum)  # Actualizar la suma mínima si la suma actual es menor
+        maxSum = max(maxSum, totalSum)  # Actualizar la suma máxima si la suma actual es mayor
 
-    print(minSum, maxSum)    
+    print(minSum, maxSum)
 
-if __name__ == '__main__':
+# Leer la entrada
+arr = list(map(int, input().split()))
 
-    arr = list(map(int, input().rstrip().split()))
+# Llamar a la función con la matriz de entrada
+miniMaxSum(arr)
 
-    miniMaxSum(arr)
 
